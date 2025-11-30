@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { SenhasService } from './senhas';
 
 describe('Senhas', () => {
