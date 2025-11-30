@@ -1,7 +1,0 @@
-{
-  "name": "ticket",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
