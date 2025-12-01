@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Relatórios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Data (YYMMDD)</ion-label>
+    <ion-input [(ngModel)]="dateStr"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="gerar()">Gerar Relatório Diário</ion-button>
+
+  <div *ngIf="report">
+    <h3>Resumo</h3>
+    <p>Total emitidos: {{report.totalEmitidos}}</p>
+    <p>Total atendidos: {{report.totalAtendidos}}</p>
+
+    <h4>Emitidos por tipo</h4>
+    <pre>{{ report.emittedByType | json }}</pre>
+
+    <h4>Atendidos por tipo</h4>
+    <pre>{{ report.attendedByType | json }}</pre>
+
+    <ion-button expand="block" (click)="exportCsv()">Exportar CSV</ion-button>
+  </div>
+</ion-content>

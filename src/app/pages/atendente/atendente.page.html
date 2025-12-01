@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Atendente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="stacked">Nome do guichê</ion-label>
+    <ion-input [(ngModel)]="guiche"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="chamarProximo()">Chamar Próximo</ion-button>
+
+  <div *ngIf="currentCall; else noCall">
+    <h3>Chamado: {{currentCall.id}} ({{currentCall.type}})</h3>
+    <p>Guichê: {{currentCall.guiche}}</p>
+    <p>Emitido: {{currentCall.issuedAt}}</p>
+    <p>Hora da chamada: {{currentCall.calledAt}}</p>
+    <p>Estimativa TM: {{ currentCall.estimatedTM | number:'1.0-0' }} minutos</p>
+
+    <ion-button color="success" expand="block" (click)="finalizar()">Finalizar Atendimento</ion-button>
+  </div>
+
+  <ng-template #noCall>
+    <p>Nenhum chamado no momento.</p>
+  </ng-template>
+
+</ion-content>

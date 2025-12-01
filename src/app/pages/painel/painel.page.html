@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Painel de Chamadas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Últimas 5 chamadas</h2>
+
+  <ion-list>
+    <ion-item *ngFor="let t of last5">
+      <ion-label>
+        <h2>{{ t.id }} <small>({{ t.type }})</small></h2>
+        <p>Chamado: {{ t.calledAt }} — Guichê: {{ t.guiche || '—' }} — Status: {{ t.status }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" routerLink="/totem">Voltar ao Totem</ion-button>
+  <ion-button expand="block" routerLink="/atendente">Ir para Atendente</ion-button>
+</ion-content>

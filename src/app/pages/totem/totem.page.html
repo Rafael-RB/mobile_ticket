@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Totem - Emissão de Senhas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Escolha o tipo de senha</h2>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="emitir('SP')">Emitir SP (Prioritária)</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" (click)="emitir('SE')">Emitir SE (Retirada de Exames)</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" (click)="emitir('SG')">Emitir SG (Geral)</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="lastIssued" class="card">
+    <h3>Senha emitida</h3>
+    <p><strong>ID:</strong> {{ lastIssued.id }}</p>
+    <p><strong>Tipo:</strong> {{ lastIssued.type }}</p>
+    <p><strong>Emitida às:</strong> {{ lastIssued.issuedAt }}</p>
+  </div>
+
+  <ion-button expand="block" routerLink="/painel">Ver Painel</ion-button>
+  <ion-button expand="block" routerLink="/atendente">Ir para Atendente</ion-button>
+</ion-content>
