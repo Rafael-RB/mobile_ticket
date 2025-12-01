@@ -1,7 +1,0 @@
-{
-  "name": "controle-atendimento",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
